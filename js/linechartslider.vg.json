@@ -48,7 +48,16 @@
             "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/malaysia.csv"},
             "mark": {"type": "bar", "color": "blue", "opacity": 0.7},
             "encoding": {
-                "y": {"field": "cases_new"}
+                "y": {"field": "cases_new"},
+                "tooltip":[
+                  {
+                    "field": "cases_new",
+                    "type": "quantitative",
+                    "title": "New Cases"
+                  },
+                  {"timeUnit":"yearmonthdate","field":"date", "title": "Date"}
+
+                ]
             }
         },
         {   "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/7ma_malaysia2021.csv"},
@@ -61,7 +70,7 @@
                         "type": "quantitative",
                         "title": "7-day average"
                     },
-                    {"timeUnit":"yearmonthdate", "field":"date", "title":"date"}
+                    {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
                 ]
             }
         }
@@ -89,13 +98,29 @@
             "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/vaccinations.csv"},
             "mark": {"type": "area", "color": "green", "opacity": 0.7},
             "encoding": {
-                "y": {"field": "cumul_partial"}
+                "y": {"field": "cumul_partial"},
+                "tooltip":[
+                  {
+                    "field": "cumul_partial",
+                    "type": "quantitative",
+                    "title": "At Least One Does"
+                  },
+                  {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
+                ]
             }
         },
         {   "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/vaccinations.csv"},
             "mark": {"type": "area", "color": "darkgreen","opacity": 0.7},
             "encoding": {
-                "y": {"field": "cumul_full"}
+                "y": {"field": "cumul_full"},
+                "tooltip":[
+                  {
+                    "field": "cumul_full",
+                    "type": "quantitative",
+                    "title": "Fully Vaccinated"
+                  },
+                  {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
+                ]
             }
         }
     ]
@@ -122,14 +147,30 @@
             "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/deaths_malaysia.csv"},
             "mark": {"type": "bar", "color": "red", "opacity": 0.7},
             "encoding": {
-                "y": {"field": "deaths_new"}
+                "y": {"field": "deaths_new"},
+                "tooltip":[
+                  {
+                    "field": "deaths_new",
+                    "type": "quantitative",
+                    "title": "Deaths"
+                  },
+                  {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
+                ]
             }
         },
         {   
             "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/7ma_deaths_malaysia.csv"},
             "mark": {"type": "line", "color": "red", "strokeWidth": 4},
             "encoding": {
-                "y": {"field": "ma"}
+                "y": {"field": "ma"},
+                "tooltip":[
+                  {
+                    "field": "ma",
+                    "type": "quantitative",
+                    "title": "7-day average"
+                  },
+                  {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
+                ]
             }
         }
     ]
