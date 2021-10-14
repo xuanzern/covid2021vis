@@ -18,7 +18,8 @@
           "x": {
               "timeUnit": "yearmonthdate",
               "field": "date",
-              "scale": {"domain": [{"year": 2021, "month": "jan", "date": 1}, {"year": 2021, "month": "oct", "date": 13}]}
+              "scale": {"domain": [{"year": 2021, "month": "jan", "date": 1}, {"year": 2021, "month": "oct", "date": 13}]},
+              "axis": {"title": ""}
           },
           "color": {"value": "white"}
       }
