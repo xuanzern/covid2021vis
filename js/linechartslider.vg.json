@@ -1,72 +1,128 @@
-{
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/cases_malaysia.csv"},
-    "vconcat": 
-    [{
-        "width": 480,
-        "height": 250,
-        "mark": "bar",
-        "title": "Daily New Covid-19 Cases",
-        "encoding": {
-            "x": {
-                "timeUnit": "yearmonthdate",
-                "field": "date",
-                "scale": {"domain": {"param": "brush"}},
-                "axis": {"title": ""}
-            },
-            "y": {"field": "cases_new", "type": "quantitative"},
-            "tooltip": [
-              {"field": "cases_new",
-              "type": "quantitative",
-              "title": "New Cases"},
-              {"timeUnit":"yearmonthdate", "field": "date", "title": "date"}
-            
-            ]
-        }
-    },
-    {
-      "width": 480,
-      "height": 250,
-      "mark": "bar",
-      "title": "Daily Covid-19 Recoveries",
-      "encoding": {
-        "x": {
-          "timeUnit": "yearmonthdate",
-          "field": "date", 
-          "scale": {"domain": {"param": "brush"}},
-          "axis": {"title": ""}
-        },
-        "y": {
-          "field": "cases_recovered", 
-          "type": "quantitative"
-        },
-        "color": {"value":"green"},
-        "tooltip": [
-              {"field": "cases_recovered",
-              "type": "quantitative",
-              "title": "New Recoveries"},
-              {"timeUnit":"yearmonthdate", "field": "date", "title": "date"}
-            ]
-      }
-    },
-    {
-        "width": 480,
-        "height": 10,
-        "mark": "line",
-        "params": [{
-            "name": "brush",
-            "select": {"type": "interval", "encodings": ["x"]}
-        }],
-        "encoding": {
-            "x": {
-                "timeUnit": "yearmonthdate",
-                "field": "date",
-                "title": "Date range selector",
-                "scale": {"domain": [{"year": 2021, "month": "jan", "date": 1}, {"year": 2021, "month": "oct", "date": 13}]}
-            },
-            "color": {"value": "black"}
-        }
 
-    }
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/cases_malaysia.csv"},
+  "columns": 3,
+  "concat": 
+  [{
+    "width": 480,
+    "height": 250,
+    "encoding": {
+        "x": {
+            "timeUnit": "yearmonthdate",
+            "field": "date",
+            "scale": {"domain": {"param": "brush"}},
+           "axis": {"title": ""}
+        },
+        "y": {"type": "quantitative", "axis": {"title": "Daily Covid 19 cases in 2021 and 7 day moving average"}},
+        "tooltip": [
+  
+        ]
+    },
+    "layer":[
+        
+        {   
+            "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/malaysia.csv"},
+            "mark": {"type": "bar", "color": "blue", "opacity": 0.7},
+            "encoding": {
+                "y": {"field": "cases_new"}
+            }
+        },
+        {   "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/7ma_malaysia2021.csv"},
+            "mark": {"type": "line", "color": "darkblue", "strokeWidth":4},
+            "encoding": {
+                "y": {"field": "ma"},
+                "tooltip": [
+                    {
+                        "field": "ma",
+                        "type": "quantitative",
+                        "title": "7-day average"
+                    },
+                    {"timeUnit":"yearmonthdate", "field":"date", "title":"date"}
+                ]
+            }
+        }
     ]
+  },
+  {
+    "width": 480,
+    "height": 250,
+    "mark": "bar",
+    "title": "Daily Covid-19 Recoveries",
+    "encoding": {
+      "x": {
+        "timeUnit": "yearmonthdate",
+        "field": "date", 
+        "scale": {"domain": {"param": "brush"}},
+        "axis": {"title": ""}
+      },
+      "y": {
+        "field": "cases_recovered", 
+        "type": "quantitative"
+      },
+      "color": {"value":"green"},
+      "tooltip": [
+            {"field": "cases_recovered",
+            "type": "quantitative",
+            "title": "New Recoveries"},
+            {"timeUnit":"yearmonthdate", "field": "date", "title": "date"}
+          ]
+    }
+    
+  },
+  {
+    "width": 480,
+    "height": 250,
+    "encoding": {
+        "x": {
+            "timeUnit": "yearmonthdate",
+            "field": "date",
+            "scale": {"domain": {"param": "brush"}},
+           "axis": {"title": ""}
+        },
+        "y": {"type": "quantitative", "axis": {"title": ""}},
+        "tooltip": {}
+    },
+    "layer":[
+        
+        {   
+            "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/deaths_malaysia.csv"},
+            "mark": {"type": "bar", "color": "red", "opacity": 0.7},
+            "encoding": {
+                "y": {"field": "deaths_new"}
+            }
+        },
+        {   
+            "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/7ma_deaths_malaysia.csv"},
+            "mark": {"type": "line", "color": "red", "strokeWidth": 4},
+            "encoding": {
+                "y": {"field": "ma"}
+            }
+        }
+    ]
+  },
+  {
+      "width": 480,
+      "mark": {"type": "point", "strokeWidth": 0}
+  },
+  {
+      "width": 480,
+      "height": 10,
+      "mark": "line",
+      "params": [{
+          "name": "brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+      }],
+      "encoding": {
+          "x": {
+              "timeUnit": "yearmonthdate",
+              "field": "date",
+              "title": "Date range selector",
+              "scale": {"domain": [{"year": 2021, "month": "jan", "date": 1}, {"year": 2021, "month": "oct", "date": 13}]}
+          },
+          "color": {"value": "black"}
+      }
+
+  }
+  ]
 }
