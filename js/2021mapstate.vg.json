@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "COVID-19 In Malaysia",
-    "width": 600,
-    "height": 400,
+    "title": "Total COVID-19 Cases In Malaysia in 2021",
+    "width": 1000,
+    "height": 300,
     "data": {
       "url": "https://raw.githubusercontent.com/xzmonash/data/master/malaysia-states.topojson",
       "format": {
@@ -25,7 +25,8 @@
       "type": "equirectangular"
     },
     "mark": {
-      "type": "geoshape"
+      "type": "geoshape",
+      "stroke": "grey"
       },
     "encoding": {
       "color": {
@@ -34,7 +35,7 @@
         "scale": {
           "type": "threshold",
           "domain": [5000, 10000, 70000, 150000, 250000],
-          "range": ["#FFCCCC", "#FFAAAA", "#FF8888", "#FF6666", "#FF4444", "#FF2222", "#FF0000"]
+          "range": ["#FFFF00", "#FFDD00", "#FFBB00", "#FF9900", "#FF7700", "#FF3300"]
         }
       },
       "tooltip": [
