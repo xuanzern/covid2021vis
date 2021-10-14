@@ -4,10 +4,10 @@
   "columns": 1,
   "concat": 
   [
-      
-  {
-      "width": 480,
-      "height": 10,
+    {
+      "width": 900,
+      "height": 30,
+      "title": "date range selector",
       "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/cases_malaysia.csv"},
       "mark": "line",
       "params": [{
@@ -18,15 +18,14 @@
           "x": {
               "timeUnit": "yearmonthdate",
               "field": "date",
-              "title": "Date range selector",
               "scale": {"domain": [{"year": 2021, "month": "jan", "date": 1}, {"year": 2021, "month": "oct", "date": 13}]}
           },
-          "color": {"value": "black"}
+          "color": {"value": "white"}
       }
-
-  },
-      {
-    "width": 480,
+  
+    },
+    {
+    "width": 900,
     "height": 250,
     "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/cases_malaysia.csv"},
     "title": "Daily New Covid-19 Cases in Malaysia",
@@ -68,7 +67,7 @@
     ]
   },
   {
-    "width": 480,
+    "width": 900,
     "height": 250,
     "title": "Daily Covid-19 Vaccinations",
     "encoding": {
@@ -101,8 +100,9 @@
     ]
     
   },
+
   {
-    "width": 480,
+    "width": 900,
     "height": 250,
     "title": "Daily Covid-19 Deaths",
     "encoding": {
@@ -132,10 +132,6 @@
             }
         }
     ]
-  },
-  {
-      "width": 480,
-      "mark": {"type": "point", "strokeWidth": 0}
   }
   ]
 }
