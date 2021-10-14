@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "COVID-19 In Malaysia",
-    "width": 800,
-    "height": 600,
+    "width": 600,
+    "height": 400,
     "data": {
       "url": "https://raw.githubusercontent.com/xzmonash/data/master/malaysia-states.topojson",
       "format": {
