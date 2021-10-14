@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "COVID-19 In Malaysia",
+    "width": 800,
+    "height": 600,
+    "data": {
+      "url": "https://raw.githubusercontent.com/xzmonash/data/master/malaysia-states.topojson",
+      "format": {
+            "type": "topojson",
+            "feature": "states"
+          }
+    },
+    "transform": [{
+        "lookup": "properties.Name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/totalbystate2021.csv"
+          },
+          "key": "state",
+          "fields": ["total"]
+        }
+      }
+    ],
+    "projection": {
+      "type": "equirectangular"
+    },
+    "mark": {
+      "type": "geoshape"
+      },
+    "encoding": {
+      "color": {
+        "field": "total",
+        "type": "quantitative",
+        "scale": {
+          "type": "threshold",
+          "domain": [5000, 10000, 70000, 150000, 250000],
+          "range": ["#FFCCCC", "#FFAAAA", "#FF8888", "#FF6666", "#FF4444", "#FF2222", "#FF0000"]
+        }
+      },
+      "tooltip": [
+        {"field": "properties.Name", "type": "nominal", "title": "state"},
+        {"field": "total", "type": "quantitative"}
+      ]
+    }
+  
+  }
