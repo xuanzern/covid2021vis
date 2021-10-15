@@ -97,13 +97,16 @@
         {   
             "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/vaccinations.csv"},
             "mark": {"type": "area", "color": "green", "opacity": 0.7},
+            "transform": [
+                {"calculate": "datum.cumul_partial/32365999*100", "as": "At Least One Dose"}
+            ],
             "encoding": {
-                "y": {"field": "cumul_partial"},
+                "y": {"field": "At Least One Dose"},
                 "tooltip":[
                   {
-                    "field": "cumul_partial",
+                    "field": "At Least One Dose",
                     "type": "quantitative",
-                    "title": "At Least One Does"
+                    "title": "At Least One Dose"
                   },
                   {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
                 ]
@@ -111,11 +114,14 @@
         },
         {   "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/vaccinations.csv"},
             "mark": {"type": "area", "color": "darkgreen","opacity": 0.7},
+            "transform": [
+                {"calculate": "datum.cumul_full/32365999*100", "as": "Fully Vaccinated"}
+            ],
             "encoding": {
-                "y": {"field": "cumul_full"},
+                "y": {"field": "Fully Vaccinated"},
                 "tooltip":[
                   {
-                    "field": "cumul_full",
+                    "field": "Fully Vaccinated",
                     "type": "quantitative",
                     "title": "Fully Vaccinated"
                   },
