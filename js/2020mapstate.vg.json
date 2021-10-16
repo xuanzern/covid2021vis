@@ -57,7 +57,7 @@
       "type": "quantitative",
       "scale": {
         "type": "quantile",
-        "range": ["#FFFF00", "#FFDD00", "#FFBB00"]
+        "range": ["#FFFF00", "#FFDD00"]
       }
     },
     "tooltip":[
