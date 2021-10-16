@@ -10,7 +10,7 @@
       "bind": {
         "input": "select",
         "options": ["Total Deaths per 100,000 people in 2021","Total Cases per 100,000 people in 2021"],
-        "name": "Attribute"
+        "name": "Attribute: "
       }
     }
   ],
