@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/2021cases.csv"
+    }, 
+    "params":[
+      {
+        "name": "state_selection",
+        "value": "Malaysia",
+        "bind": {
+          "input": "select",
+          "options": ["Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Perak", "Perlis", "Pulau Pinang", "Sabah", "Sarawak", "W.P. Kuala Lumpur", "W.P. Labuan", "W.P. Putrajaya"],
+          "name": "State: "
+        }
+      }
+    ]
+}
+  
