@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title":"Distribution of COVID-19 Vaccines in Malaysia",
+    "title":"Distribution of COVID-19 Vaccines",
     "data": {
       "values": [
         {"brand": "Pfizer", "doses": 22973711},
