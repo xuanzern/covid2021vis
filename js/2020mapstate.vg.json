@@ -57,8 +57,9 @@
       "type": "quantitative",
       "scale": {
         "type": "quantile",
-        "range": ["#FFFF00", "#FFDD00"]
-      }
+        "range": ["#FFFFBF", "#FFFF80", "#FFFF40"]
+      },
+      "title": "Deaths/Cases per 100,000 people"
     },
     "tooltip":[
       {"field": "properties.Name", "type": "nominal", "title": "State"},
