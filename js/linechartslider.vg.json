@@ -28,7 +28,7 @@
     {
     "width": 900,
     "height": 250,
-    "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/cases_malaysia.csv"},
+    "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/7ma_malaysia2021.csv"},
     "title": "Daily New Covid-19 Cases in Malaysia",
     "encoding": {
         "x": {
@@ -38,47 +38,72 @@
            "axis": {"title": ""}
         },
         "y": {"type": "quantitative", "axis": {"title": ""}},
-        "tooltip": [
-  
-        ]
-    },
-    "layer":[
-        
-        {   
-            "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/malaysia.csv"},
-            "mark": {"type": "area", "color": "blue", "opacity": 0.7},
-            "encoding": {
-                "y": {"field": "cases_new"},
-                "tooltip":[
+        "tooltip":[
                   {
                     "field": "cases_new",
                     "type": "quantitative",
                     "title": "New Cases"
                   },
+                  {
+                    "field": "ma",
+                    "type": "quantitative",
+                    "title": "7-day average"
+                  },
                   {"timeUnit":"yearmonthdate","field":"date", "title": "Date"}
-
                 ]
-            }
+    },
+    "layer":[
+        {   
+          "mark": {"type": "area", "color": "blue", "opacity": 0.7},
+          "encoding": {
+                "y": {"field": "cases_new"}
+          }
         },
-        {   "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/7ma_malaysia2021.csv"},
+        {
             "mark": {"type": "line", "color": "darkblue", "strokeWidth":4},
             "encoding": {
-                "y": {"field": "ma"},
-                "tooltip": [
-                    {
-                        "field": "ma",
-                        "type": "quantitative",
-                        "title": "7-day average"
-                    },
-                    {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
-                ]
+                "y": {"field": "ma"}
             }
+        },
+      {
+      "params": [
+        {
+          "name": "index",
+          "select": {
+            "type": "point",
+            "encodings": ["x"],
+            "fields": ["date"],
+            "on": "mousemove",
+            "nearest": true
+          }
         }
+      ],
+      "mark": {"type": "point"},
+      "encoding": {
+        "opacity": {"value": 0}
+      }
+    },
+    {
+      "transform": [
+        {"filter": {"and": ["index.date", {"param": "index"}]}}
+        ],
+      "mark": "rule",
+      "encoding": {
+          "color": {"value": "black"}
+      }
+    }
     ]
   },
   {
     "width": 900,
     "height": 250,
+    "data": {"url":"https://raw.githubusercontent.com/xzmonash/data/master/2021/vaccinations.csv"},
+    "transform": [
+      
+        {"calculate": "datum.cumul_partial/32365999*100", "as": "Partially Vaccinated"},
+        {"calculate": "datum.cumul_full/32365999*100", "as": "Fully Vaccinated"}
+      
+    ],
     "title": "Total Percentage of Population Vaccinated",
     "encoding": {
       "x": {
@@ -90,50 +115,72 @@
       "y": {
         "type": "quantitative", 
         "axis": {"title": ""}
-      }
+      },
+      "tooltip":[
+        {
+          "field": "Partially Vaccinated",
+          "type": "quantitative",
+          "title": "Partially Vaccinated",
+          "format": ".0f"
+        },
+        {
+          "field": "Fully Vaccinated",
+          "type": "quantitative",
+          "title": "Fully Vaccinated",
+          "format": ".0f"
+        },
+        {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
+      ]
     },
       "layer": [
-        
-        {   
-            "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/vaccinations.csv"},
+        {     
             "mark": {"type": "area", "color": "green", "opacity": 0.7},
-            "transform": [
-                {"calculate": "datum.cumul_partial/32365999*100", "as": "At Least One Dose"}
-            ],
             "encoding": {
-                "y": {"field": "At Least One Dose"},
-                "tooltip":[
-                  {
-                    "field": "At Least One Dose",
-                    "type": "quantitative",
-                    "title": "At Least One Dose"
-                  },
-                  {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
-                ]
+                "y": {"field": "Partially Vaccinated"}
+                
             }
         },
-        {   "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/vaccinations.csv"},
+        {   
             "mark": {"type": "area", "color": "darkgreen","opacity": 0.7},
-            "transform": [
-                {"calculate": "datum.cumul_full/32365999*100", "as": "Fully Vaccinated"}
-            ],
             "encoding": {
-                "y": {"field": "Fully Vaccinated"},
-                "tooltip":[
-                  {
-                    "field": "Fully Vaccinated",
-                    "type": "quantitative",
-                    "title": "Fully Vaccinated"
-                  },
-                  {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
-                ]
+                "y": {"field": "Fully Vaccinated"}
+                
             }
+        },
+      {
+      "params": [
+        {
+          "name": "index2",
+          "select": {
+            "type": "point",
+            "encodings": ["x"],
+            "fields": ["date"],
+            "on": "mousemove",
+            "nearest": true
+          }
         }
+      ],
+      "mark": {"type": "point"},
+      "encoding": {
+        "opacity": {"value": 0}
+      }
+    },
+    {
+      "transform": [
+        {"filter": {"and": ["index2.date", {"param": "index2"}]}}
+        ],
+      "mark": "rule",
+      "encoding": {
+          "color": {"value": "black"}
+      }
+    }
+        
     ]
     
   },
 
   {
+    "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/7ma_deaths_malaysia.csv"},
     "width": 900,
     "height": 250,
     "title": "Daily Covid-19 Deaths",
@@ -145,31 +192,12 @@
            "axis": {"title": ""}
         },
         "y": {"type": "quantitative", "axis": {"title": ""}},
-        "tooltip": {}
-    },
-    "layer":[
-        
-        {   
-            "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/deaths_malaysia.csv"},
-            "mark": {"type": "area", "color": "red", "opacity": 0.7},
-            "encoding": {
-                "y": {"field": "deaths_new"},
                 "tooltip":[
                   {
                     "field": "deaths_new",
                     "type": "quantitative",
                     "title": "Deaths"
                   },
-                  {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
-                ]
-            }
-        },
-        {   
-            "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/7ma_deaths_malaysia.csv"},
-            "mark": {"type": "line", "color": "red", "strokeWidth": 4},
-            "encoding": {
-                "y": {"field": "ma"},
-                "tooltip":[
                   {
                     "field": "ma",
                     "type": "quantitative",
@@ -177,8 +205,50 @@
                   },
                   {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
                 ]
+    },
+    "layer":[
+        {   
+            "mark": {"type": "area", "color": "red", "opacity": 0.7},
+            "encoding": {
+                "y": {"field": "deaths_new"}
             }
+        },
+        {   
+            
+            "mark": {"type": "line", "color": "red", "strokeWidth": 4},
+            "encoding": {
+                "y": {"field": "ma"}
+                
+            }
+        },
+      {
+      "params": [
+        {
+          "name": "index3",
+          "select": {
+            "type": "point",
+            "encodings": ["x"],
+            "fields": ["date"],
+            "on": "mousemove",
+            "nearest": true
+          }
         }
+      ],
+      "mark": {"type": "point"},
+      "encoding": {
+        "opacity": {"value": 0}
+      }
+    },
+    {
+      "transform": [
+        {"filter": {"and": ["index3.date", {"param": "index3"}]}}
+        ],
+      "mark": "rule",
+      "encoding": {
+          "color": {"value": "black"}
+      }
+    }
+        
     ]
   }
   ]
