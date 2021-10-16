@@ -1,47 +1,89 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Total COVID-19 Cases In Malaysia in 2021",
-    "width": 1000,
-    "height": 300,
-    "data": {
-      "url": "https://raw.githubusercontent.com/xzmonash/data/master/malaysia-states.topojson",
-      "format": {
-            "type": "topojson",
-            "feature": "states"
-          }
-    },
-    "transform": [{
-        "lookup": "properties.Name",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/totalbystate2021.csv"
-          },
-          "key": "state",
-          "fields": ["total"]
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Total COVID-19 Cases and Deaths per 100,000 People in Malaysia in 2021",
+  "width": 1000,
+  "height": 300,
+  "params": [
+    {
+      "name": "attribute",
+      "value": "Total Cases per 100,000 people in 2021",
+      "bind": {
+        "input": "select",
+        "options": ["Total Deaths per 100,000 people in 2021","Total Cases per 100,000 people in 2021"],
+        "name": "Attribute"
       }
-    ],
-    "projection": {
-      "type": "equirectangular"
-    },
-    "mark": {
-      "type": "geoshape",
-      "stroke": "grey"
-      },
-    "encoding": {
-      "color": {
-        "field": "total",
-        "type": "quantitative",
-        "scale": {
-          "type": "threshold",
-          "domain": [5000, 10000, 70000, 150000, 250000],
-          "range": ["#FFFF00", "#FFDD00", "#FFBB00", "#FF9900", "#FF7700", "#FF3300"]
-        }
-      },
-      "tooltip": [
-        {"field": "properties.Name", "type": "nominal", "title": "state"},
-        {"field": "total", "type": "quantitative"}
-      ]
     }
-  
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/xzmonash/data/master/malaysia-states.topojson",
+    "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+  },
+  "transform": [{
+      "lookup": "properties.Name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/xzmonash/data/master/stateDCs.csv"
+        },
+        "key": "state",
+        "fields": ["total2","population", "totald2"]
+      }
+    },
+    {
+      "calculate": "datum.totald2/datum.population*100000",
+      "as": "Total Deaths per 100,000 people in 2021"
+    },
+    {
+      "calculate": "datum.total2/datum.population*100000",
+      "as": "Total Cases per 100,000 people in 2021"
+    },
+    {
+      "calculate": "datum[attribute]",
+      "as": "new"
+    }
+  ],
+  "projection": {
+    "type": "equirectangular"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "grey"
+    },
+  "encoding": {
+    "color": {
+      "field": "new",
+      "type": "quantitative",
+      "scale": {
+        "type": "quantile",
+        "range": ["#FFFF00", "#FFDD00", "#FFBB00", "#FF9900", "#FF7700", "#FF3300"]
+      }
+    },
+    "tooltip":[
+      {"field": "properties.Name", "type": "nominal", "title": "State"},
+      {
+        "field": "Total Cases per 100,000 people in 2021", 
+        "type": "quantitative", 
+        "title": "Total Cases per 100,000 People",
+        "format": ".1f"
+      },
+      {
+        "field": "total2",
+        "type": "quantitative",
+        "title": "Total Cases"
+      },
+      {
+        "field": "Total Deaths per 100,000 people in 2021",
+        "type":"quantitative", 
+        "title": "Total Deaths per 100,000 People",
+        "format": ".1f"
+      },
+      {
+        "field": "totald2",
+        "type": "quantitative",
+        "title": "Total Deaths"
+      }
+    ]
   }
+}
