@@ -47,7 +47,8 @@
                   {
                     "field": "ma",
                     "type": "quantitative",
-                    "title": "7-day average"
+                    "title": "7-day average",
+                    "format": ".1f"
                   },
                   {"timeUnit":"yearmonthdate","field":"date", "title": "Date"}
                 ]
@@ -121,13 +122,13 @@
           "field": "Partially Vaccinated",
           "type": "quantitative",
           "title": "Partially Vaccinated",
-          "format": ".0f"
+          "format": ".1f"
         },
         {
           "field": "Fully Vaccinated",
           "type": "quantitative",
           "title": "Fully Vaccinated",
-          "format": ".0f"
+          "format": ".1f"
         },
         {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
       ]
@@ -201,7 +202,8 @@
                   {
                     "field": "ma",
                     "type": "quantitative",
-                    "title": "7-day average"
+                    "title": "7-day average",
+                    "format": ".1f"
                   },
                   {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
                 ]
