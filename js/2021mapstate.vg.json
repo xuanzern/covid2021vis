@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Total COVID-19 Cases and Deaths per 100,000 People in Malaysia in 2021",
-  "width": 1000,
+  "width": 950,
   "height": 300,
   "params": [
     {

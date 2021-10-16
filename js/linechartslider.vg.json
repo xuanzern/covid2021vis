@@ -46,7 +46,7 @@
         
         {   
             "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/malaysia.csv"},
-            "mark": {"type": "bar", "color": "blue", "opacity": 0.7},
+            "mark": {"type": "area", "color": "blue", "opacity": 0.7},
             "encoding": {
                 "y": {"field": "cases_new"},
                 "tooltip":[
@@ -151,7 +151,7 @@
         
         {   
             "data": {"url": "https://raw.githubusercontent.com/xzmonash/data/master/2021/deaths_malaysia.csv"},
-            "mark": {"type": "bar", "color": "red", "opacity": 0.7},
+            "mark": {"type": "area", "color": "red", "opacity": 0.7},
             "encoding": {
                 "y": {"field": "deaths_new"},
                 "tooltip":[
