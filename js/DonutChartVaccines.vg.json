@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title":"Distribution of COVID-19 Vaccines in Malaysia",
+    "data": {
+      "values": [
+        {"brand": "Pfizer", "doses": 22973711},
+        {"brand": "Sinovac", "doses": 18756490},
+        {"brand": "AstraZeneca", "doses": 3784687},
+        {"brand": "CanSino", "doses": 112882}
+      ]
+    },
+    "height": 400,
+    "width": 400,
+    "transform":[
+      {
+        "calculate": "datum.doses/45627770*100", "as": "Percentage"
+      }
+    ],
+    "mark": {"type": "arc", "innerRadius": 100, "stroke": "black", "strokeWidth":0.5},
+    "encoding": {
+      "theta": {"field": "doses", "type": "quantitative"},
+      "color": {
+        "field": "brand", 
+        "type": "nominal",
+        "title": "Vaccine"
+        },
+      "tooltip":[
+        {
+          "field": "brand",
+          "type": "nominal",
+          "title": "Vaccine"
+        },
+        {
+          "field": "doses",
+          "type": "quantitative",
+          "title": "Total Doses Administered"
+        },
+        {
+          "field": "Percentage",
+          "type": "quantitative",
+          "title": "Percentage of Total Doses (%)",
+          "format": ".1f"
+        }
+      ]
+    }
+  }
