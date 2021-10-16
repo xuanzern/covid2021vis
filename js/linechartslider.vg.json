@@ -66,6 +66,146 @@
                 "y": {"field": "ma"}
             }
         },
+        {
+          "data": {"values": [{"date":"2021-01-11"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "MCO by states",
+                "color": "grey",
+                "dx": 40,
+                "fontSize":10
+              }
+              
+            }
+          ]
+        },
+        {
+          "data": {"values": [{"date":"2021-06-01"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Total Lockdown",
+                "color": "grey",
+                "dx": -40,
+                "fontSize":10
+              }
+              
+            }
+          ]
+        },
+        {
+          "data": {"values": [{"date":"2021-06-28"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "End of",
+                "color": "grey",
+                "dx": -40,
+                "dy": -100,
+                "fontSize":10
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Total Lockdown",
+                "color": "grey",
+                "dx": -40,
+                "dy": -90,
+                "fontSize":10
+              }
+            }
+          ]
+        },
+        {
+          "data": {"values": [{"date":"2021-07-21"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Delta",
+                "color": "grey",
+                "dx": -25,
+                "dy": -100,
+                "fontSize":10
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Variant",
+                "color": "grey",
+                "dx": -25,
+                "dy": -90,
+                "fontSize":10
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Emerges",
+                "color": "grey",
+                "dx": -25,
+                "dy": -80,
+                "fontSize":10
+              }
+            }
+          ]
+        },
+        {
+          "data": {"values": [{"date":"2021-08-22"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "40.7% of population Fully Vaccinated",
+                "color": "grey",
+                "dx": 41,
+                "dy": -110,
+                "fontSize":10
+              }
+            }
+          ]
+        },
       {
       "params": [
         {
@@ -222,6 +362,156 @@
                 "y": {"field": "ma"}
                 
             }
+        },
+        {
+          "data": {"values": [{"date":"2021-01-11"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "MCO by states",
+                "color": "grey",
+                "dx": 40,
+                "fontSize":10
+              }
+              
+            }
+          ]
+        },
+        {
+          "data": {"values": [{"date":"2021-06-01"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Total Lockdown",
+                "color": "grey",
+                "dx": -40,
+                "fontSize":10
+              }
+              
+            }
+          ]
+        },
+        {
+          "data": {"values": [{"date":"2021-06-28"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "End of",
+                "color": "grey",
+                "dx": -40,
+                "dy": -100,
+                "fontSize":10
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Total Lockdown",
+                "color": "grey",
+                "dx": -40,
+                "dy": -90,
+                "fontSize":10
+              }
+            }
+          ]
+        },
+        {
+          "data": {"values": [{"date":"2021-07-21"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Delta",
+                "color": "grey",
+                "dx": -25,
+                "dy": -100,
+                "fontSize":10
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Variant",
+                "color": "grey",
+                "dx": -25,
+                "dy": -90,
+                "fontSize":10
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Emerges",
+                "color": "grey",
+                "dx": -25,
+                "dy": -80,
+                "fontSize":10
+              }
+            }
+          ]
+        },
+        {
+          "data": {"values": [{"date":"2021-08-22"}]},
+          "encoding": {"x":{"field":"date", "type":"temporal"}},
+          "layer": [
+            {
+              "mark":"rule",
+              "encoding":{
+                "color": {"value":"grey"}
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "40.7% of population",
+                "color": "grey",
+                "dx": 0,
+                "dy": -110,
+                "fontSize":10
+              }
+            },
+            {
+              "mark":{
+                "type": "text",
+                "text": "Fully Vaccinated",
+                "color": "grey",
+                "dx": 0,
+                "dy": -100,
+                "fontSize":10
+              }
+            }
+          ]
         },
       {
       "params": [
