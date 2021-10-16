@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Total COVID-19 Cases In Malaysia in 2020",
+    "width": 1000,
+    "height": 300,
+    "data": {
+      "url": "https://raw.githubusercontent.com/xzmonash/data/master/malaysia-states.topojson",
+      "format": {
+            "type": "topojson",
+            "feature": "states"
+          }
+    },
+    "transform": [{
+        "lookup": "properties.Name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/xzmonash/data/master/2020/totalbystate2020.csv"
+          },
+          "key": "state",
+          "fields": ["total","population"]
+        }
+      },
+      {
+        "calculate": "datum.total/datum.population*100000",
+        "as": "Total Cases per 100,000 people"
+      }
+    ],
+    "projection": {
+      "type": "equirectangular"
+    },
+    "mark": {
+      "type": "geoshape",
+      "stroke": "grey"
+      },
+    "encoding": {
+      "color": {
+        "field": "Total Cases per 100,000 people",
+        "type": "quantitative",
+        "scale": {
+          "type": "threshold"
+        }
+      },
+      "tooltip": [
+        {"field": "properties.Name", "type": "nominal", "title": "state"},
+        {"field": "Total Cases per 100,000 people", "type": "quantitative"}
+      ]
+    }
+  
+  }
