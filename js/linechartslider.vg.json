@@ -35,9 +35,9 @@
             "timeUnit": "yearmonthdate",
             "field": "date",
             "scale": {"domain": {"param": "brush"}},
-           "axis": {"title": ""}
+           "axis": {"title": "", "gridOpacity":0}
         },
-        "y": {"type": "quantitative", "axis": {"title": ""}},
+        "y": {"type": "quantitative", "axis": {"title": "","gridOpacity":0}},
         "tooltip":[
                   {
                     "field": "cases_new",
@@ -111,11 +111,11 @@
         "timeUnit": "yearmonthdate",
         "field": "date", 
         "scale": {"domain": {"param": "brush"}},
-        "axis": {"title": ""}
+        "axis": {"title": "","gridOpacity":0}
       },
       "y": {
         "type": "quantitative", 
-        "axis": {"title": ""}
+        "axis": {"title": "", "gridOpacity":0}
       },
       "tooltip":[
         {
@@ -187,26 +187,26 @@
     "title": "Daily Covid-19 Deaths",
     "encoding": {
         "x": {
-            "timeUnit": "yearmonthdate",
-            "field": "date",
-            "scale": {"domain": {"param": "brush"}},
-           "axis": {"title": ""}
+          "timeUnit": "yearmonthdate",
+          "field": "date",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"title": "", "gridOpacity": 0}
         },
-        "y": {"type": "quantitative", "axis": {"title": ""}},
-                "tooltip":[
-                  {
-                    "field": "deaths_new",
-                    "type": "quantitative",
-                    "title": "Deaths"
-                  },
-                  {
-                    "field": "ma",
-                    "type": "quantitative",
-                    "title": "7-day average",
-                    "format": ".1f"
-                  },
-                  {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
-                ]
+        "y": {"type": "quantitative", "axis": {"title": "", "gridOpacity":0}},
+        "tooltip":[
+          {
+            "field": "deaths_new",
+            "type": "quantitative",
+            "title": "Deaths"
+          },
+          {
+            "field": "ma",
+            "type": "quantitative",
+            "title": "7-day average",
+            "format": ".1f"
+          },
+          {"timeUnit":"yearmonthdate", "field":"date", "title":"Date"}
+        ]
     },
     "layer":[
         {   
