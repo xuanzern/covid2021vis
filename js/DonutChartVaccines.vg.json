@@ -22,13 +22,13 @@
       "color": {
         "field": "brand", 
         "type": "nominal",
-        "title": "Vaccine"
+        "title": "Manafacturer"
         },
       "tooltip":[
         {
           "field": "brand",
           "type": "nominal",
-          "title": "Vaccine"
+          "title": "Manafacturer"
         },
         {
           "field": "doses",
