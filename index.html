@@ -58,6 +58,13 @@
             </div>
         </div>
 
+        <h3>The Distribution of Various COVID-19 Vaccines in Malaysia</h3>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="donut" class="vis-container"></div>
+            </div>
+        </div>
+
         
 
     </div>
@@ -72,6 +79,9 @@
 
         var line = "js/linechartslider.vg.json";
         vegaEmbed("#line", line, {"actions": false})
+
+        var donut = "js/DonutChartVaccines.vg.json";
+        vegaEmbed("#donut", donut, {"actions": false})
 
     </script>
 </body>
