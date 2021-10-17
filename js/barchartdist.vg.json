@@ -1,6 +1,6 @@
 {
     "$schema":"https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text":"Distribution of COVID-19 cases"},
+    "title": {"text":"Distribution of COVID-19 cases in 2021"},
     "width": 400,
     "height":400,
     "data":{
@@ -33,7 +33,7 @@
         "type": "nominal",
         "scale": 
         {
-          "range": ["#adf7b6","#ffc09f", "#79addc","#ffee93"]
+          "range": ["rgb(99, 211, 112)","#fa9a66", "#79addc","#ffc505"]
         },
         "sort": [
           "Child (0-9)", "Adolescent (10-19)", "Adult (20+)", "Elderly (55+)"
@@ -48,7 +48,9 @@
       ]
     },
     "config": {
-      "legend": {"orient":"top", "offset": 10}
+      "legend": {"orient":"top", "offset": 10},
+      "background": "whitesmoke"
+
     }
 }
        

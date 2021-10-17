@@ -32,13 +32,25 @@ h2{
     border-radius: 10px;
 }
 
-p{
+.pp{
     text-align: center;
     font-family: 'Rubik', sans-serif;
     width: 600px;
     padding-left: 200px;
     font-size: 20px;
 }
+.p1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+}
+
+/* p{
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    width: 600px;
+    padding-left: 200px;
+    font-size: 20px;
+} */
 
 .background{
     background-color: #1d2130;
@@ -76,6 +88,21 @@ p{
     color: #2c6aa5;
 }
 
+.adult{
+    color: #79addc;
+}
+
+.child{
+    color: rgb(99, 211, 112);
+}
+
+.ad{
+    color:#fa9a66;
+}
+
+.elder{
+    color: #ffc505;
+}
 #map1{
     padding-top:37px;
 }
