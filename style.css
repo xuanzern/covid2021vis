@@ -67,6 +67,9 @@ p{
 .good{
     color: #27f24c;
 }
+.pfizer{
+    color: #2c6aa5;
+}
 
 #map1{
     padding-top:37px;
@@ -87,12 +90,16 @@ p{
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.placeholder3{
+    padding-bottom:20px;
+}
 p1{
     text-align: right;
     font-size: medium;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
 }
+
 
 p2{
     text-align: center;

@@ -51,7 +51,31 @@
                 </div>
             </div>
         </div>
+
         <hr>
+        <h2>Who is getting <span class = 'deaths'>COVID-19</span>?</h2>
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div class = "sidebyside">
+                    <div id = #donut style = "width:100%">
+                        <div id="bar" class="vis-container"></div>
+                    </div>
+                </div>
+                <div class = "sidebyside">
+                    <div class = "placeholder2"></div>
+                    <div class = "placeholder2"></div>
+                    <div class = "placeholder2"></div>
+                    <p1 style = "width: 100%" >
+                        
+
+                    </p1>
+                </div>
+                
+            </div>
+        </div>
+        <div class = "placeholder3"></div>
+        <hr>
+
         <h2>How much do <span class = 'good'>vaccines</span> help in dealing with <span class = 'deaths'>COVID-19</span>?</h2>
         <p>
             Looking at the graphs below, we can see that after reaching 
@@ -70,7 +94,7 @@
         </div>
         <hr>
 
-        <h2>The Distribution of Various COVID-19 <span class = 'good'>Vaccines</span> in Malaysia</h2>
+        <h2>The Distribution of Various <span class = 'good'>COVID-19 Vaccines</span> in Malaysia</h2>
 
         <div class="pure-g">
             <div class="pure-u-1-1">
@@ -80,9 +104,18 @@
                     </div>
                 </div>
                 <div class = "sidebyside">
-                    <div class = "placeholder"></div>
-                    <p1 style = "width: 100%">
-                        asdfasdfasdfasdfasd
+                    <div class = "placeholder2"></div>
+                    <div class = "placeholder2"></div>
+                    <div class = "placeholder2"></div>
+                    <p1 style = "width: 100%" >
+                        Among all 45,627,770 doses of the vaccines administered, 50.2% of them
+                        is manafactured by <b><span class = 'pfizer'>Pfizer</span></b>. This is not a surprise because <b><span class = 'pfizer'>Pfizer</span></b>'s <b><span class = 'good'>COVID-19 vaccine</span></b> was the <b>first COVID-19 vaccine</b> listed by the 
+                        <b>World Health Organisation (WHO)</b>
+                        for emergency use. <b><span class = 'pfizer'>Pfizer</span></b>'s vaccine was also the first COVID-19 vaccine approved by the 
+                        <b>U.S. Food and Drug Administration</b> (FDA). 
+
+                        Furthermore, Pfizer's COVID-19 vaccine has <b><span class = 'pfizer'>91.3% efficacy</span></b> against symptomatic COVID-19. 
+
                     </p1>
                 </div>
                 
@@ -107,12 +140,16 @@
         var map2 = "js/2021mapstate.vg.json";
         vegaEmbed("#map2", map2, {"actions": false});
 
+        var bar = "js/barchartdist.vg.json";
+        vegaEmbed("#bar", bar, {"actions": false})
+
         var line = "js/linechartslider.vg.json";
         vegaEmbed("#line", line, {"actions": false})
 
         var donut = "js/DonutChartVaccines.vg.json";
         vegaEmbed("#donut", donut, {"actions": false})
-
+        
+        
     </script>
 </body>
 
