@@ -1,0 +1,51 @@
+{
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text":"Distribution of COVID-19 cases"},
+    "width": 400,
+    "height":400,
+    "data":{
+      "values":[
+        {"group":"Child", "percentage": 14.1},
+        {"group":"Adult", "percentage":70.2},
+        {"group":"Elderly", "percentage":8.4},
+        {"group":"Adolescent", "percentage":7.3}
+      ]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "group",
+        "type":"nominal", 
+        "sort": [
+          "Child", "Adolescent", "Adult", "Eldery"
+        ],
+        "title": ""
+      } ,
+      "y":{
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Percentage"
+      },
+      "color":{
+        "field": "group",
+        "title":"Group",
+        "type": "nominal",
+        "scale": 
+        {
+          "range": ["#adf7b6","#ffc09f", "#79addc","#ffee93"]
+        },
+        "sort": [
+          "Child", "Adolescent", "Adult", "Eldery"
+        ]
+      }, 
+      "tooltip":[
+        {"field": "group", "type": "nominal", "title": "Group"},
+        {
+          "field": "percentage", "type": "quantitative",
+          "title": "Percentage (%)"
+        }
+      ]
+    }
+}
+       
+    
