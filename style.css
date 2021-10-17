@@ -37,11 +37,21 @@ p{
     text-align: center;
     font-size: medium;
     font-family: 'Rubik', sans-serif;
-    width: 500px;
-    padding-left: 350px;
+    width: 600px;
+    padding-left: 300px;
     font-size: 20px;
 }
 
 .background{
     background-color: #1d2130;
+}
+
+.map-container{
+    width: 100%;
+    padding-left: 165px;
+}
+
+.line-chart{
+    width:100%;
+    padding-left:110px;
 }

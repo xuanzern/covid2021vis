@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Total COVID-19 Cases and Deaths per 100,000 People in Malaysia 2020",
-  "width": 950,
-  "height": 300,
+  "title": "Total COVID-19 Cases/Deaths per 100,000 People in Malaysia 2020",
+  "width": 850,
+  "height": 500,
   "params": [
     {
       "name": "attribute",
@@ -44,9 +44,7 @@
       "as": "new"
     }
   ],
-  "projection": {
-    "type": "equirectangular"
-  },
+  "projection": {"type": "conicEqualArea", "rotate": [-120, 0, 0]},
   "mark": {
     "type": "geoshape",
     "stroke": "grey"
@@ -86,5 +84,13 @@
         "title": "Total Deaths"
       }
     ]
+  },
+  "config": {
+    "style": {
+      "cell": {
+        "stroke": null
+      }
+    },
+    "background": "whitesmoke"
   }
 }
