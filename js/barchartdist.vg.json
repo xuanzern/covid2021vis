@@ -11,7 +11,7 @@
         {"group":"Adolescent", "percentage":7.3}
       ]
     },
-    "mark": "bar",
+    "mark": {"type": "bar", "cornerRadiusTopLeft": 5, "cornerRadiusTopRight": 5},
     "encoding": {
       "x": {
         "field": "group",
