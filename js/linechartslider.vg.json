@@ -255,7 +255,8 @@
       },
       "y": {
         "type": "quantitative", 
-        "axis": {"title": "", "gridOpacity":0}
+        "axis": {"title": "", "gridOpacity":0}, 
+        "scale": {"domain": [0, 100]}
       },
       "tooltip":[
         {

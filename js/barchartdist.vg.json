@@ -24,7 +24,8 @@
       "y":{
         "field": "percentage",
         "type": "quantitative",
-        "title": "Percentage"
+        "axis": {"title": "Percentage", "gridOpacity": 0},
+        "scale": {"domain": [0, 100]}
       },
       "color":{
         "field": "group",

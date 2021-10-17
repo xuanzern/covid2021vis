@@ -53,6 +53,13 @@
       }
       }
       
-    ]
-
+    ],
+    "config": {
+      "style": {
+        "cell": {
+          "stroke": null
+        }
+      }
+    },
+    "background": "whitesmoke"
   }
