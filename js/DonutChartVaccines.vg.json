@@ -16,13 +16,13 @@
         "calculate": "datum.doses/45627770*100", "as": "Percentage"
       }
     ],
-    "mark": {"type": "arc", "innerRadius": 100, "stroke": "black", "strokeWidth":0.5},
     "encoding": {
-      "theta": {"field": "doses", "type": "quantitative"},
+      "theta": {"field": "doses", "type": "quantitative", "stack": true},
       "color": {
         "field": "brand", 
         "type": "nominal",
-        "title": "Manafacturer"
+        "title": "Manafacturer",
+        "legend": null
         },
       "tooltip":[
         {
@@ -33,7 +33,7 @@
         {
           "field": "doses",
           "type": "quantitative",
-          "title": "Total Doses Administered"
+          "title": "Doses Administered"
         },
         {
           "field": "Percentage",
@@ -42,5 +42,17 @@
           "format": ".1f"
         }
       ]
-    }
+    },
+    "layer": [
+      {
+      "mark": {"type": "arc", "innerRadius": 100, "stroke": "black", "strokeWidth":0.5}},
+      {
+      "mark":{"type": "text", "radius": 220},
+      "encoding":{
+        "text": {"field": "brand", "type": "nominal"}
+      }
+      }
+      
+    ]
+
   }
