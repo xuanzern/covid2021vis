@@ -197,7 +197,7 @@
             {
               "mark":{
                 "type": "text",
-                "text": "40.7% of population Fully Vaccinated",
+                "text": "40.7% of Population Fully Vaccinated",
                 "color": "grey",
                 "dx": 41,
                 "dy": -110,
@@ -495,7 +495,7 @@
             {
               "mark":{
                 "type": "text",
-                "text": "40.7% of population",
+                "text": "40.7% of Population",
                 "color": "grey",
                 "dx": 0,
                 "dy": -110,
