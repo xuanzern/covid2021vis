@@ -3,7 +3,7 @@
 }
 
 .page {
-    width: 1200px;
+    width: 1000px;
     background-color: whitesmoke;
     margin: auto;
     padding: 20px;
@@ -16,7 +16,7 @@ h1{
     /* background-color: #353c59; */
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 1200px;
+    width: 1000px;
     font-size: 60px;
     font-weight: bold;
     font-family: 'Rubik', sans-serif;
@@ -38,7 +38,7 @@ p{
     font-size: medium;
     font-family: 'Rubik', sans-serif;
     width: 600px;
-    padding-left: 300px;
+    padding-left: 200px;
     font-size: 20px;
 }
 
@@ -48,10 +48,10 @@ p{
 
 .map-container{
     width: 100%;
-    padding-left: 165px;
+    padding-left: 100px;
 }
 
 .line-chart{
     width:100%;
-    padding-left:110px;
+    padding-left:13px;
 }
