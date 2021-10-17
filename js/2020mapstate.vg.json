@@ -55,7 +55,7 @@
       "type": "quantitative",
       "scale": {
         "type": "quantile",
-        "range": ["#FFFFBF", "#FFFF80", "#FFFF40"]
+        "range": ["#FFFFBF", "#FFFF80"]
       },
       "title": "Deaths/Cases per 100k people",
       "legend": {
