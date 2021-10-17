@@ -5,10 +5,10 @@
     "height":400,
     "data":{
       "values":[
-        {"group":"Child", "percentage": 14.1},
-        {"group":"Adult", "percentage":70.2},
-        {"group":"Elderly", "percentage":8.4},
-        {"group":"Adolescent", "percentage":7.3}
+        {"group":"Child (0-9)", "percentage": 14.1},
+        {"group":"Adult (20+)", "percentage":70.2},
+        {"group":"Elderly (55+)", "percentage":8.4},
+        {"group":"Adolescent (10-19)", "percentage":7.3}
       ]
     },
     "mark": {"type": "bar", "cornerRadiusTopLeft": 5, "cornerRadiusTopRight": 5},
@@ -17,7 +17,7 @@
         "field": "group",
         "type":"nominal", 
         "sort": [
-          "Child", "Adolescent", "Adult", "Eldery"
+          "Child (0-9)", "Adolescent (10-19)", "Adult (20+)", "Elderly (55+)"
         ],
         "title": ""
       } ,
@@ -29,14 +29,14 @@
       },
       "color":{
         "field": "group",
-        "title":"Group",
+        "title":"Age Group",
         "type": "nominal",
         "scale": 
         {
           "range": ["#adf7b6","#ffc09f", "#79addc","#ffee93"]
         },
         "sort": [
-          "Child", "Adolescent", "Adult", "Eldery"
+          "Child (0-9)", "Adolescent (10-19)", "Adult (20+)", "Elderly (55+)"
         ]
       }, 
       "tooltip":[
@@ -46,6 +46,9 @@
           "title": "Percentage (%)"
         }
       ]
+    },
+    "config": {
+      "legend": {"orient":"top", "offset": 10}
     }
 }
        

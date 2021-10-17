@@ -24,7 +24,7 @@
         "title": "Manafacturer",
         "legend": null,
         "scale": {
-          "range": ["#34DED0","#2C46C4","#2c6aa5", "#D234B0"]
+          "range": ["#34DED0","#3300ff","#2c6aa5", "#D234B0"]
         }
         },
       "tooltip":[
