@@ -57,7 +57,7 @@
         "type": "quantile",
         "range": ["#FFFF00","#FFBB00", "#FF9900", "#FF7700", "#FF3300"]
       },
-      "title":"Deaths/Cases per 100k people",
+      "title":"Cases/Deaths per 100k people",
       "legend": {
         "titleFontSize":10,
         "titleFontWeight": 200
